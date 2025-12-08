@@ -30,3 +30,18 @@ function numberCountTargt(num, target) {
 }
 
 console.log(numberCountTargt(number, ""))
+
+function addNumber(num) {
+    const numbStr = "" + num
+    result = 0;
+    for(let char of numbStr) {
+        result += Number(char)
+    }
+
+    if(result >= 10) {
+        result = addNumber(result)
+    }
+    return result;
+}
+
+console.log(addNumber(number))

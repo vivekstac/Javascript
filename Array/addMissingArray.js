@@ -19,8 +19,8 @@ function findMissingArray(arr) {
     // const max = Math.max(...arr);
     const minmum = () => {
         let minimum = arr[0];
-        for(let num of arr) {
-            if(num < minimum) {
+        for (let num of arr) {
+            if (num < minimum) {
                 minimum = num
             }
         }
@@ -29,8 +29,8 @@ function findMissingArray(arr) {
 
     const maxmum = () => {
         let maximum = arr[0];
-        for(let num of arr) {
-            if(num > maximum) {
+        for (let num of arr) {
+            if (num > maximum) {
                 maximum = num
             }
         }
@@ -41,8 +41,8 @@ function findMissingArray(arr) {
 
     let missing = [];
 
-    for(let i = min; i <= max; i++) {
-        if(!arr.includes(i)) {
+    for (let i = min; i <= max; i++) {
+        if (!arr.includes(i)) {
             missing.push(i)
         }
     }
@@ -51,8 +51,8 @@ function findMissingArray(arr) {
 }
 
 function sortArray(arr) {
-    for(i = 0; i < arr.length; i++) {
-        if(arr[i] > arr[i + 1]) {
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] > arr[i + 1]) {
             let temp = arr[i]
             arr[i] = arr[i + 1];
             arr[i + 1] = temp;
@@ -68,8 +68,8 @@ function missingSet(arrs) {
     let newSet = new Set(arr);
     const result = []
 
-    for(i = 1; i <= n; i++) {
-        if(!newSet.has(i)) {
+    for (i = 1; i <= n; i++) {
+        if (!newSet.has(i)) {
             result.push(i)
         }
     }
