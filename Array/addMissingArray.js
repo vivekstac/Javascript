@@ -56,7 +56,7 @@ function sortArray(arr) {
             let temp = arr[i]
             arr[i] = arr[i + 1];
             arr[i + 1] = temp;
-            i = -1
+            i = -1 // Reset the loop to start from the beginning after a swap
         }
     }
     return arr

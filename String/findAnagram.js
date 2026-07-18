@@ -9,14 +9,14 @@ function findAnagram(str1, str2) {
         return false
     }
 
-    const freq1 = {};
-    const freq2 = {};
+    const freq1 = {}; // frequency objects store 1
+    const freq2 = {}; // frequency objects store 2
 
     for (let char of stringL1) {
-        freq1[char] = (freq1[char] || 0) + 1;
+        freq1[char] = (freq1[char] || 0) + 1; // count frequency of each char
     }
     for (let char of stringL2) {
-        freq2[char] = (freq2[char] || 0) + 1;
+        freq2[char] = (freq2[char] || 0) + 1; // count frequency of each char
     }
 
     for (let feq in freq1) {
@@ -53,20 +53,24 @@ console.log(groupAnagrams(arr));
 function isAnagram(a, b) {
     if (a.length !== b.length) return false;
 
-    const count = {};
+    const count = {}; // Object to count character frequencies
 
     for (let char of a) {
-        count[char] = (count[char] || 0) + 1;
+        count[char] = (count[char] || 0) + 1; //adding the count of each char in string
     }
 
     for (let char of b) {
         if (!count[char]) return false;
-        count[char]--;
+        count[char]--; // removing the count of each char in string
     }
 
     return true;
 }
 
+console.log(isAnagram("listen", "silent")); // true ✅
+console.log(isAnagram("hello", "olleh"));   // true ✅
+console.log(isAnagram("test", "best"));     // false ❌
+console.log(isAnagram("aabb", "abbb"));     // false ❌
 
 
 

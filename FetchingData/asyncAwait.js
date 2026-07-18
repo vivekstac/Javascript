@@ -1,6 +1,6 @@
 const url = "https://api.restful-api.dev/objects";
 
-async function getData() {
+async function getData(url) {
   try {
     const res = await fetch(url);
     const data = await res.json();
@@ -12,4 +12,4 @@ async function getData() {
   }
 }
 
-getData();
+getData(url);

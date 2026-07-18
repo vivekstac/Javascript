@@ -30,12 +30,12 @@ function isBalanced(str) {
 
     for (let char of str) {
         // If opening bracket → push
-        if (Object.values(pairs).includes(char)) {
-            stack.push(char);
+        if (Object.values(pairs).includes(char)) { // If it's an opening bracket
+            stack.push(char); // Push opening bracket onto stack
         }
         // If closing bracket → check last opened
-        else if (pairs[char]) {
-            if (stack.pop() !== pairs[char]) return false;
+        else if (pairs[char]) { // If it's a closing bracket
+            if (stack.pop() !== pairs[char]) return false; // Pop from stack and check if it matches the corresponding opening bracket
         }
     }
 

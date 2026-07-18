@@ -64,3 +64,11 @@ function flatten(arr) {
         }
     }, []);
 }
+
+function flat(arr) {
+    return arr.reduce(
+        (acc, item) =>
+            acc.concat(Array.isArray(item) ? flat(item) : item),
+        []
+    );
+}

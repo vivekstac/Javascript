@@ -1,4 +1,4 @@
-const array = [1, 21, 21, 2, 4, 5,6, 8, 12, 12, 23, 8, 9];
+const array = [1, 21, 21, 2, 4, 5, 6, 8, 12, 12, 23, 8, 9];
 
 // Using Set() - it returns the unique values
 const duplcatesRemoved = [...new Set(array)];
@@ -9,13 +9,25 @@ function removeDuplicateFilter(arr) {
     return arr.filter((val, index, self) => self.indexOf(val) === index)
 }
 
+const mapFu = array.map((e, i) => array.indexOf(e) === i ? e : null).filter(Boolean);
+
+const unique = arr.reduce((acc, item) =>
+    acc.includes(item) ? acc : [...acc, item],
+    []
+);
+
+
+const reduceAccumulation = array.reduce((acc, item) => {
+    return acc.includes(item) ? acc : [...acc, item]
+}, [])
+
 // console.log(removeDuplicateFilter(array))
 
 //  Using Reduce() - it has two callbacks acc - is an argument item like [].reduce((acc, item) => {}, [])
 
 function removeReduce(arr) {
     return arr.reduce((acc, item) => {
-        return acc.includes(item) ?  acc : [...acc, item] 
+        return acc.includes(item) ? acc : [...acc, item]
     }, [])
 }
 
@@ -26,16 +38,16 @@ function removeReduce(arr) {
 function removeDuplicates(arr) {
     let result = [];
 
-    for(let item of arr) {
+    for (let item of arr) {
         let duplicate = false;
-        for(let s of result) {
-            if(item === s) {
+        for (let s of result) {
+            if (item === s) {
                 duplicate = true;
                 break;
             }
         }
 
-        if(!duplicate) {
+        if (!duplicate) {
             result.push(item)
         }
     }
@@ -44,16 +56,16 @@ function removeDuplicates(arr) {
 
 function removeDuplicatesFor(arr) {
     let result = [];
-    for(let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         let duplicate = false;
-        for(j = 0; j < result.length; j++) {
-            if(arr[i] === result[j]) {
-               duplicate = true;
-               break;
+        for (j = 0; j < result.length; j++) {
+            if (arr[i] === result[j]) {
+                duplicate = true;
+                break;
             }
         }
 
-        if(!duplicate) {
+        if (!duplicate) {
             result.push(arr[i])
         }
     }
@@ -63,16 +75,16 @@ function removeDuplicatesFor(arr) {
 
 function forInRemoveDuplicates(arr) {
     let result = [];
-    for(let item in arr) {
+    for (let item in arr) {
         let duplicate = false;
-        for(let j in result) {
-            if(arr[item] === result[j]) {
+        for (let j in result) {
+            if (arr[item] === result[j]) {
                 duplicate = true;
                 break;
             }
         }
 
-        if(!duplicate) {
+        if (!duplicate) {
             result.push(arr[item])
         }
     }

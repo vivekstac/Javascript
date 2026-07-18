@@ -19,6 +19,7 @@ function longestPrefixArray(arr) {
             // - index exceeds word length
             // - characters do not match
             if (i >= arr[j].length || arr[j][i] !== char) {
+                // stop if index exceeds word length or characters do not match
                 return prefix;
             }
         }

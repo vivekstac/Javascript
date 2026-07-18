@@ -4,8 +4,8 @@ function findLongestString(str) {
     let strArr = str.split(" ");
     let result = strArr[0];
 
-    for(let word of strArr) {
-        if(word.length < result.length) {
+    for (let word of strArr) {
+        if (word.length > result.length) {
             result = word;
         }
     }

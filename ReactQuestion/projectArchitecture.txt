@@ -1,0 +1,106 @@
+ReactJs Architecture
+
+src /
+│
+├── assets /              # Images, icons, fonts
+│
+├── components /          # Reusable UI components(Button, Modal)
+│   ├── Button /
+│   │   ├── Button.jsx
+│   │   └── Button.css
+│   └── Modal /
+│
+├── pages /               # Page - level components(routes)
+│   ├── Login /
+│   │   └── Login.jsx
+│   ├── Dashboard /
+│   │   └── Dashboard.jsx
+│
+├── features /            # Feature - based modules(Redux slices)
+│   ├── auth /
+│   │   ├── authSlice.js
+│   │   ├── authService.js
+│   │   └── AuthPage.jsx
+│   └── users /
+│
+├── redux /               # Global store setup
+│   ├── store.js
+│   └── rootReducer.js
+│
+├── hooks /               # Custom hooks
+│   └── useDebounce.js
+│
+├── services /            # API calls
+│   ├── api.js
+│   └── authApi.js
+│
+├── utils /               # Helper functions
+│   └── formatDate.js
+│
+├── routes /              # Route definitions
+│   └── AppRoutes.jsx
+│
+├── styles /              # Global styles
+│   └── global.css
+│
+├── App.jsx
+├── index.js
+└── config.js            # Environment config
+
+
+
+NextJs Architecture
+
+
+src/
+├── app/
+│   ├── layout.jsx        # Root layout
+│   ├── page.jsx          # Home page
+│   ├── loading.jsx
+│   ├── error.jsx
+│
+│   ├── auth/
+│   │   ├── login/
+│   │   │   └── page.jsx
+│   │   └── register/
+│   │       └── page.jsx
+│
+│   ├── dashboard/
+│   │   ├── page.jsx
+│   │   ├── loading.jsx
+│   │   └── error.jsx
+│
+├── components/           # Shared UI components
+│   ├── Header.jsx
+│   ├── Sidebar.jsx
+│   └── Button.jsx
+│
+├── features/             # Feature-specific logic
+│   ├── auth/
+│   │   ├── auth.service.js
+│   │   └── auth.hooks.js
+│   ├── dashboard/
+│   │   └── dashboard.service.js
+│
+├── services/             # API calls
+│   ├── apiClient.js
+│   └── user.service.js
+│
+├── hooks/                # Shared hooks
+│   ├── useAuth.js
+│   └── useDebounce.js
+│
+├── lib/                  # Server utilities
+│   ├── auth.js
+│   ├── fetcher.js
+│   └── cache.js
+│
+├── styles/
+│   └── globals.css
+│
+├── utils/
+│   ├── constants.js
+│   └── helpers.js
+│
+├── middleware.js
+└── next.config.js

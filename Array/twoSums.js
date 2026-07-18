@@ -26,7 +26,8 @@ const twoSums = (array, target) => {
     const diff = target - array[i];
 
     if (diff in obj) {
-      return [obj[diff], i];
+      return [obj[diff], i]; // If you want to return indices
+      return [diff, array[i]]; // If you want to return the values instead of indices
     }
 
     if (!(array[i] in obj)) {
